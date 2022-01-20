@@ -1,3 +1,4 @@
+private void initializeLogic() {
 final AlertDialog dialog2 = new AlertDialog.Builder(MainActivity.this).create();
 
 View inflate = getLayoutInflater().inflate(R.layout.cust, null);
@@ -21,3 +22,6 @@ webview1.loadUrl("https://acceptable.a-ads.com/1901951");
 but2.setOnClickListener(new OnClickListener() { public void onClick(View view) { dialog2.dismiss(); } });
 
 dialog2.show();
+}
+
+initializeLogic();
