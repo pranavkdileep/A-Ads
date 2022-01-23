@@ -1,27 +1,48 @@
-private void initializeLogic() {
-final AlertDialog dialog2 = new AlertDialog.Builder(MainActivity.this).create();
+<uses-permission android:name="android.permission.INTERNET" />
 
-View inflate = getLayoutInflater().inflate(R.layout.cust, null);
+ <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:gravity="right"
+        android:orientation="vertical">
 
-dialog2.setView(inflate);
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
 
-dialog2.setTitle(Advertisement");
+            android:layout_marginRight="10dp"
+            android:text="Close" />
 
-WebView webview1 = (WebView) inflate.findViewById(R.id.webview1);
-		webview1.getSettings().setJavaScriptEnabled(true);
-		webview1.getSettings().setSupportZoom(false);
-
-Button but1 = (Button) inflate.findViewById(R.id.button1);
-
-Button but2 = (Button) inflate.findViewById(R.id.button2);
-
-webview1.loadUrl("https://acceptable.a-ads.com/1901951");
+        <WebView
+            android:id="@+id/webview1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 
 
 
-but2.setOnClickListener(new OnClickListener() { public void onClick(View view) { dialog2.dismiss(); } });
+        final AlertDialog dialog2 = new AlertDialog.Builder(MainActivity.this).create();
 
-dialog2.show();
-}
+        View inflate = getLayoutInflater().inflate(R.layout.cust, null);
+
+        dialog2.setView(inflate);
+
+
+        WebView webview1 = (WebView) inflate.findViewById(R.id.webview1);
+        webview1.getSettings().setJavaScriptEnabled(true);
+        webview1.getSettings().setSupportZoom(false);
+
+        Button but2 = (Button) inflate.findViewById(R.id.button2);
+        webview1.setWebViewClient(new WebViewClient());
+        webview1.loadUrl("https://gotolink.techypranav.eu.org/");
+
+
+
+        but2.setOnClickListener(new View.OnClickListener() { public void onClick(View view) { dialog2.dismiss(); } });
+
+        dialog2.show();
+    
+
 
 initializeLogic();
